@@ -3,8 +3,23 @@ import { storage } from "../firebase"
 import { ref, onValue } from "firebase/database"
 import './dash.css'
 import React from "react"
+import Button from '@mui/material/Button';
+
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 // import React from "react"
 export const Dashboard = () => {
+
+
+    const email="aayushpandey1100@gmail.com"
+    const[title,setTitle]=React.useState("");
+    const[description,setDescription]=React.useState("");
+
+    const [open, setOpen] = React.useState(false);
 
     const [books, setBooks] = React.useState([{}]);
 
@@ -30,7 +45,22 @@ export const Dashboard = () => {
         });
     },[]);
 
-console.log(books);
+// console.log(books);
+
+
+
+
+const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+
+
 
     return (
 
@@ -75,7 +105,7 @@ console.log(books);
                             You Have Successfully Logged in!
                         </p>
                         <button className="button-53" >Dashboard</button>
-                        <button className="button-531" >Order Books</button>
+                        <button className="button-531" onClick={handleClickOpen} >Order Books</button>
                     </div>
                 </div>
 
@@ -86,6 +116,55 @@ console.log(books);
 
 
                 <div className='gridDash'>
+
+
+
+
+                <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Book On Demand!</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Fill The Given Form To Order The Desired Book To Be Added Here!👹
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Book Name"
+            fullWidth
+            variant="standard"
+            onChange={
+                (event)=>{
+                    setTitle(event.target.value);
+                }
+            }
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="cate"
+            label="Book Description"
+            fullWidth
+            variant="standard"
+            onChange={
+                (event)=>{
+                   setDescription(event.target.value);
+                }
+            }
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button><a href={`mailto:gameraayushpandey1100@gmail.com?subject=Order Book&body=Hey Aayush! Can You Please Upload
+           Book : ${title} 
+           Description :${description}`}>Send</a></Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+
+
 
 
 {
