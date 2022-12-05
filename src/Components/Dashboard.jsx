@@ -155,7 +155,7 @@ const handleClickOpen = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button><a href={`mailto:gameraayushpandey1100@gmail.com?subject=Order Book&body=Hey Aayush! Can You Please Upload
+          <Button><a href={`mailto:organizationietapps@gmail.com?subject=Order Book&body=Hey Aayush! Can You Please Upload
            Book : ${title} 
            Description :${description}`}>Send</a></Button>
         </DialogActions>
