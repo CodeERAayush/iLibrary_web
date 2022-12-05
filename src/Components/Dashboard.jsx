@@ -128,6 +128,7 @@ const handleClickOpen = () => {
           </DialogContentText>
           <TextField
             autoFocus
+            autocomplete="off"
             margin="dense"
             id="name"
             label="Book Name"
@@ -141,6 +142,7 @@ const handleClickOpen = () => {
           />
           <TextField
             autoFocus
+            autocomplete="off"
             margin="dense"
             id="cate"
             label="Book Description"
