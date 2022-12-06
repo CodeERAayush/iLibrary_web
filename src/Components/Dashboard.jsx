@@ -15,9 +15,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 export const Dashboard = () => {
 
 
-    const email="aayushpandey1100@gmail.com"
-    const[title,setTitle]=React.useState("");
-    const[description,setDescription]=React.useState("");
+    const email = "aayushpandey1100@gmail.com"
+    const [title, setTitle] = React.useState("");
+    const [description, setDescription] = React.useState("");
 
     const [open, setOpen] = React.useState(false);
 
@@ -37,26 +37,26 @@ export const Dashboard = () => {
             //   console.log(data)
             if (data !== null) {
                 Object.values(data).map((internals) => {
-                    setBooks((oldBooks)=>[internals,...oldBooks]);
+                    setBooks((oldBooks) => [internals, ...oldBooks]);
                     // console.log(internals);
-                    
+
                 });
             }
         });
-    },[]);
+    }, []);
 
-// console.log(books);
-
-
+    // console.log(books);
 
 
-const handleClickOpen = () => {
-    setOpen(true);
-  };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
 
 
@@ -120,48 +120,48 @@ const handleClickOpen = () => {
 
 
 
-                <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Book On Demand!</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Fill The Given Form To Order The Desired Book To Be Added Here!👹
-          </DialogContentText>
-          <TextField
-            autoFocus
-            autocomplete="off"
-            margin="dense"
-            id="name"
-            label="Book Name"
-            fullWidth
-            variant="standard"
-            onChange={
-                (event)=>{
-                    setTitle(event.target.value);
-                }
-            }
-          />
-          <TextField
-            autoFocus
-            autocomplete="off"
-            margin="dense"
-            id="cate"
-            label="Book Description"
-            fullWidth
-            variant="standard"
-            onChange={
-                (event)=>{
-                   setDescription(event.target.value);
-                }
-            }
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button><a href={`mailto:organizationietapps@gmail.com?subject=Order Book&body=Hey Aayush! Can You Please Upload
+                    <Dialog open={open} onClose={handleClose}>
+                        <DialogTitle>Book On Demand!</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>
+                                Fill The Given Form To Order The Desired Book To Be Added Here!👹
+                            </DialogContentText>
+                            <TextField
+                                autoFocus
+                                autocomplete="off"
+                                margin="dense"
+                                id="name"
+                                label="Book Name"
+                                fullWidth
+                                variant="standard"
+                                onChange={
+                                    (event) => {
+                                        setTitle(event.target.value);
+                                    }
+                                }
+                            />
+                            <TextField
+                                autoFocus
+                                autocomplete="off"
+                                margin="dense"
+                                id="cate"
+                                label="Book Description"
+                                fullWidth
+                                variant="standard"
+                                onChange={
+                                    (event) => {
+                                        setDescription(event.target.value);
+                                    }
+                                }
+                            />
+                        </DialogContent>
+                        <DialogActions>
+                            <Button onClick={handleClose}>Cancel</Button>
+                            <Button><a href={`mailto:organizationietapps@gmail.com?subject=Order Book&body=Hey Aayush! Can You Please Upload
            Book : ${title} 
            Description :${description}`}>Send</a></Button>
-        </DialogActions>
-      </Dialog>
+                        </DialogActions>
+                    </Dialog>
 
 
 
@@ -169,93 +169,23 @@ const handleClickOpen = () => {
 
 
 
-{
-    books.map((dataOfBooks)=>{
-
-        
-       return(
-         <div className='entityDash'>
-        <div className='xxyy'>
-            <img className="entityImg" src='/images/books.png' />
-        </div>
-        <div className='entityContent'>
-            <h4>{dataOfBooks.title}</h4>
-            <p className='ins'>{dataOfBooks.description}</p>
-            <p className='ins'><a href={dataOfBooks.url}>Read Book...</a></p>
-        </div>
-    </div>)
-    })
-}
+                    {
+                        books.map((dataOfBooks) => {
 
 
-{/* 
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div>
-
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div>
-
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div>
-
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div>
-
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div>
-
-
-                    <div className='entityDash'>
-                        <div className='xxyy'>
-                            <img className="entityImg" src='/images/books.png' />
-                        </div>
-                        <div className='entityContent'>
-                            <h4>Book</h4>
-                            <p className='ins'>Description</p>
-                            <p className='ins'>Book Details</p>
-                        </div>
-                    </div> */}
-
+                            return (
+                                <div className='entityDash'>
+                                    <div className='xxyy'>
+                                        <img className="entityImg" src='/images/bookish.gif' />
+                                    </div>
+                                    <div className='entityContent'>
+                                        <h4>{dataOfBooks.title}</h4>
+                                        <p className='ins'>{dataOfBooks.description}</p>
+                                        <p className='ins'><a href={dataOfBooks.url}>Read Book...</a></p>
+                                    </div>
+                                </div>)
+                        })
+                    }
 
 
                 </div>
