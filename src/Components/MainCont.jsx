@@ -81,14 +81,14 @@ export const MainCont = () => {
                     </h3>
                     <ul>
                         <li>Email: <span>aayushpandey1100@gmail.com</span></li>
-                        <li>Phone: <span>+91-7860456546</span></li>
-                        <li>Address: <span>Ramjanki Nagar Nakha No 1 Basharatpur Gorakhpur</span></li>
+                        <li>Address: <span>Gorakhnath, Gorakhpur ,U.P.</span></li>
                     </ul>
                 </div>
                 <div className='line'>
                 </div>
                 <div className='gplay'>
-                    <img id="getIt" src="/images/gPlay.png"></img>
+                <a href='https://play.google.com/store/apps/details?id=com.codeeraayush.ilibrary' target='_blank'> <img id="getIt" src="/images/gPlay.png"></img></a>
+                <a href='https://codeeraayush-portfolio.netlify.app' target='_blank'> <img id="getPort" src="/images/portfolio.png"></img></a>
                 </div>
             </div>
 
@@ -102,4 +102,4 @@ export const MainCont = () => {
         </>
 
     )
-}
+} 

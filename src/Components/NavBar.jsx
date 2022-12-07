@@ -6,13 +6,8 @@ export const NavBar=()=>{
         <>
         <nav className="navHolder">
             <div className='mainNav'>
-            <img src="/images/icon.jpg"/>
-
-            <ul>
-                <li><a href='#'>Home</a></li>
-                <li><a href='#'>Most Viewed</a></li>
-                <li><a href='#'>New Books</a></li>
-            </ul>
+            <img src="/images/books.gif"/>
+            <h4>iLibrary</h4>
             </div>
             <div className='buttonSec'>
                 <button className='button' onClick={signInWithGoogle}>Login</button>

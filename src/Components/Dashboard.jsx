@@ -1,6 +1,6 @@
 import { db } from "../firebase"
 import { storage } from "../firebase"
-import { ref, onValue } from "firebase/database"
+import { ref, onValue,query,orderByChild,orderByPriority, limitToFirst } from "firebase/database"
 import './dash.css'
 import React from "react"
 import Button from '@mui/material/Button';
@@ -18,7 +18,6 @@ export const Dashboard = () => {
     const email = "aayushpandey1100@gmail.com"
     const [title, setTitle] = React.useState("");
     const [description, setDescription] = React.useState("");
-
     const [open, setOpen] = React.useState(false);
 
     const [books, setBooks] = React.useState([{}]);
@@ -27,11 +26,8 @@ export const Dashboard = () => {
         localStorage.clear();
         window.location.reload();
     }
-
-
-
     React.useEffect(() => {
-        const starCountRef = ref(db, 'Books');
+        const starCountRef = query(ref(db, 'Books'),orderByChild("timestamp"));
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
             //   console.log(data)
@@ -70,7 +66,7 @@ export const Dashboard = () => {
 
             <nav className="navHolder">
                 <div className='mainNav'>
-                    <img src="/images/icon.jpg" />
+                    <img id="proImage" src="/images/icon.jpg" />
 
                     <ul>
                         <li><a href='#'>Home</a></li>
@@ -79,6 +75,7 @@ export const Dashboard = () => {
                     </ul>
                 </div>
                 <div className='ImgSec'>
+                    <button className="reqBt" onClick={handleClickOpen} >Request Book!</button>
                     <button className="logBtn" onClick={logOut}>Logout!</button>
                     <img id="AdminImg" src={localStorage.getItem("photo")} />
                 </div>
@@ -105,7 +102,7 @@ export const Dashboard = () => {
                             You Have Successfully Logged in!
                         </p>
                         <button className="button-53" >Dashboard</button>
-                        <button className="button-531" onClick={handleClickOpen} >Order Books</button>
+                        <button className="button-531" onClick={handleClickOpen} >Request Books</button>
                     </div>
                 </div>
 
