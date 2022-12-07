@@ -61,6 +61,9 @@ a:hover{
 }
 
 
+.openInDesk{
+    display: none;
+}
 
 
 
@@ -104,5 +107,9 @@ h4{
     }
     .mainNav{
         display: block;
+    }
+    .openInDesk{
+        display: block;
+        color: #ff4d00;
     }
 }
