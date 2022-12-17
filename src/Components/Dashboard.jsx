@@ -1,6 +1,6 @@
 import { db } from "../firebase"
 import { storage } from "../firebase"
-import { ref, onValue,query,orderByChild,orderByPriority, limitToFirst } from "firebase/database"
+import { ref, onValue, query, orderByChild, orderByPriority, limitToFirst } from "firebase/database"
 import './dash.css'
 import React from "react"
 import Button from '@mui/material/Button';
@@ -27,7 +27,7 @@ export const Dashboard = () => {
         window.location.reload();
     }
     React.useEffect(() => {
-        const starCountRef = query(ref(db, 'Books'),orderByChild("timestamp"));
+        const starCountRef = query(ref(db, 'Books'), orderByChild("timestamp"));
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
             //   console.log(data)
@@ -209,7 +209,7 @@ export const Dashboard = () => {
                     <div className='line'>
                     </div>
                     <div className='gplay'>
-                        <img id="getIt" src="/images/gPlay.png"></img>
+                        <a href='https://play.google.com/store/apps/details?id=com.codeeraayush.ilibrary' target='_blank'> <img id="getIt" src="/images/gPlay.png"></img></a>
                     </div>
                 </div>
 

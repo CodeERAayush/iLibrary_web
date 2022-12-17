@@ -84,7 +84,7 @@ li{
     flex-direction: column;
 }
 #getIt{
-    width: auto;
+    width: 10rem;
     justify-content: flex-end;
 }
 .grid{
